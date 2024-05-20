@@ -1,0 +1,57 @@
+{
+  "cliente": [
+    {
+      "id": "05fa",
+      "name": "Mrs. Lorraine Gorczany",
+      "cellphone": "934-432-1825 x36747",
+      "email": "Damaris_Nicolas@hotmail.com",
+      "address": "7782 Fourth Avenue"
+    }
+  ],
+  "estoque": [
+    {
+      "id": "43b6",
+      "description": "Sabão",
+      "unitaryValue": 10,
+      "quantity": 100
+    },
+    {
+      "id": "73f1",
+      "description": "Toalha Verde",
+      "unitaryValue": 100,
+      "quantity": 21
+    }
+  ],
+  "pedido": [
+    {
+      "id": "c110",
+      "customer": "05fa",
+      "products": [
+        {
+          "product": "43b6",
+          "value": 100
+        },
+        {
+          "product": "43b6",
+          "value": 80
+        }
+      ],
+      "totalValue": 180,
+      "deliveryDate": "2024-11-17T08:03:57.490Z",
+      "payment": "CARD"
+    },
+    {
+      "id": "3c26",
+      "customer": "05fa",
+      "products": [
+        {
+          "product": "73f1",
+          "value": 15
+        }
+      ],
+      "totalValue": 15,
+      "deliveryDate": "2024-05-30",
+      "payment": "CARD"
+    }
+  ]
+}
