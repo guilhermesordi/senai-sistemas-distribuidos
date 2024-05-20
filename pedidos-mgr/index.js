@@ -23,6 +23,7 @@ app.post('/orders', async (req, res) => {
   if(status < 400) {
     success = true;
   }
+  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -44,6 +45,7 @@ app.get('/orders', async (req, res) => {
   if(status < 400) {
     success = true;
   }
+  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -65,6 +67,7 @@ app.get('/orders/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
+  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -86,6 +89,7 @@ app.delete('/orders/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
+  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -107,6 +111,7 @@ app.patch('/orders/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
+  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
