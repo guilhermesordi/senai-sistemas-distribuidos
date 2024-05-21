@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express()
 const port = 5001
 const db = 'http://localhost:4000'
-app.use(cors)
+app.use(cors())
 
 // Adição de produtos em estoque
 app.post('/products', async (req, res) => {

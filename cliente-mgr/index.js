@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express()
 const port = 5002
 const db = 'http://localhost:4000'
-app.use(cors)
+app.use(cors())
 
 // Adição de cliente
 app.post('/customers', async (req, res) => {
