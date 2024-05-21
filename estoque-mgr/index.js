@@ -1,9 +1,11 @@
 
 const express = require('express')
 const axios = require('axios')
+const cors = require('cors')
 const app = express()
 const port = 5001
 const db = 'http://localhost:4000'
+app.use(cors)
 
 // Adição de produtos em estoque
 app.post('/products', async (req, res) => {
@@ -23,7 +25,6 @@ app.post('/products', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -45,7 +46,6 @@ app.get('/products', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -67,7 +67,6 @@ app.get('/products/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -89,7 +88,6 @@ app.delete('/products/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -111,7 +109,6 @@ app.patch('/products/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 

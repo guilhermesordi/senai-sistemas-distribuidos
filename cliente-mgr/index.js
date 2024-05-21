@@ -1,9 +1,11 @@
 
 const express = require('express')
 const axios = require('axios')
+const cors = require('cors')
 const app = express()
 const port = 5002
 const db = 'http://localhost:4000'
+app.use(cors)
 
 // Adição de cliente
 app.post('/customers', async (req, res) => {
@@ -23,7 +25,6 @@ app.post('/customers', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -45,7 +46,6 @@ app.get('/customers', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -67,7 +67,6 @@ app.get('/customers/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -89,7 +88,6 @@ app.delete('/customers/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
@@ -111,7 +109,6 @@ app.patch('/customers/:id', async (req, res) => {
   if(status < 400) {
     success = true;
   }
-  res.header("Access-Control-Allow-Origin", "*")
   res.status(status).send({ success, ...data })
 })
 
